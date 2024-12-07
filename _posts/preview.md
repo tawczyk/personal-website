@@ -1,5 +1,6 @@
 ---
 title: "Welcome to My Blog"
+category: 0
 excerpt: "Welcome! Thanks for checking out my blog. Here, I post (in varying degrees of depth) about the latest happenings in my life. In the near term, I will simply post about adventures I've had in recent years as I play catch-up."
 coverImage: "/assets/blog/preview/box-elder-summit.jpg"
 date: "2024-12-06T05:35:07.322Z"
