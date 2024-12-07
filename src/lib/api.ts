@@ -26,3 +26,12 @@ export function getAllPosts(): Post[] {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
+
+export function getPostsByCategory(cat: number) {
+    const slugs = getPostSlugs();
+    const posts = slugs
+        .map((slug) => getPostBySlug(slug))
+        // filter by category
+        .filter((post) => post.category == cat));
+    return posts;
+}
