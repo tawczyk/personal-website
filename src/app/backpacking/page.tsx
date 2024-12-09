@@ -2,10 +2,10 @@ import Container from "@/app/_components/container";
 import { HeroPost } from "@/app/_components/hero-post";
 import { Intro } from "@/app/_components/intro";
 import { MoreStories } from "@/app/_components/more-stories";
-import { getAllPosts } from "@/lib/api";
+import { getPostsByCategory } from "@/lib/api";
 
 export default function Backpacking() {
-  const allPosts = getAllPosts();
+  const allPosts = getPostsByCategory(0);
 
   const heroPost = allPosts[0];
 
