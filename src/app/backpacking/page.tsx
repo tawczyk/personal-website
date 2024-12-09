@@ -5,7 +5,7 @@ import { MoreStories } from "@/app/_components/more-stories";
 import { getPostsByCategory } from "@/lib/api";
 
 export default function Backpacking() {
-  const allPosts = getPostsByCategory(0);
+  const allPosts = getPostsByCategory(1);
 
   const heroPost = allPosts[0];
 
