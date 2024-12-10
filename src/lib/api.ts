@@ -32,6 +32,6 @@ export function getPostsByCategory(cat: number) {
     const posts = slugs
         .map((slug) => getPostBySlug(slug))
         // filter by category
-        .filter((post) => post.category == cat));
+        .filter((post) => post.category == cat);
     return posts;
 }
