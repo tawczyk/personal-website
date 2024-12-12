@@ -12,18 +12,30 @@ export function NavBar() {
             >
                 Backpacking
             </Link>
-            <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-                Fastpacking 
-            </h4>
-            <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-                Bikepacking 
-            </h4>
-            <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-                Racing 
-            </h4>
-            <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-                Training 
-            </h4>
+            <Link 
+                href="/bikepacking"
+                className="text-center md:text-left text-lg mt-5 md:pl-8"
+            >
+                Bikepacking
+            </Link>
+            <Link 
+                href="/fastpacking"
+                className="text-center md:text-left text-lg mt-5 md:pl-8"
+            >
+                Fastpacking
+            </Link>
+            <Link 
+                href="/racing"
+                className="text-center md:text-left text-lg mt-5 md:pl-8"
+            >
+                Racing
+            </Link>
+            <Link 
+                href="/training"
+                className="text-center md:text-left text-lg mt-5 md:pl-8"
+            >
+                Training
+            </Link>
         </section>
     );
 }
