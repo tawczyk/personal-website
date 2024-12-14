@@ -5,8 +5,10 @@ export const HOME_OG_IMAGE_URL =
 
 
 export const PostCategories = new Map([
-    ["BIKE", 1],
-    ["BOARD", 2],
-    ["FOOT", 3],
-    ["HAND", 4]
+    ["BIKE",        1],
+    ["BOARD",       2],
+    ["FOOT",        3],
+    ["HAND",        4],
+    ["RACING",      5],
+    ["TRAINING",    6]
 ]);
