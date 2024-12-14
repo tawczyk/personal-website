@@ -5,7 +5,7 @@ import { MoreStories } from "@/app/_components/more-stories";
 import { getPostsByCategory } from "@/lib/api";
 import { PostCategories } from "@/lib/constants";
 
-export default function Backpacking() {
+export default function ByBike() {
     const allPosts = getPostsByCategory(PostCategories.get("BIKE"));
 
     if(allPosts !== null && allPosts.length > 0) {
