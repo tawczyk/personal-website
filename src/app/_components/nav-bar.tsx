@@ -7,22 +7,28 @@ export function NavBar() {
     return (
         <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
             <Link 
-                href="/backpacking"
+                href="/bike"
                 className="text-center md:text-left text-lg mt-5 md:pl-8"
             >
-                Backpacking
+                By Bike
             </Link>
             <Link 
-                href="/bikepacking"
+                href="/board"
                 className="text-center md:text-left text-lg mt-5 md:pl-8"
             >
-                Bikepacking
+                By Board
             </Link>
             <Link 
-                href="/fastpacking"
+                href="/foot"
                 className="text-center md:text-left text-lg mt-5 md:pl-8"
             >
-                Fastpacking
+                By Foot
+            </Link>
+            <Link 
+                href="/hand"
+                className="text-center md:text-left text-lg mt-5 md:pl-8"
+            >
+                By Hand
             </Link>
             <Link 
                 href="/racing"
