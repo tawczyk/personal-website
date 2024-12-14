@@ -3,9 +3,10 @@ import { HeroPost } from "@/app/_components/hero-post";
 import { Intro } from "@/app/_components/intro";
 import { MoreStories } from "@/app/_components/more-stories";
 import { getPostsByCategory } from "@/lib/api";
+import { PostCategories } from "@/lib/constants";
 
 export default function Backpacking() {
-    const allPosts = getPostsByCategory(2);
+    const allPosts = getPostsByCategory(PostCategories.get("BIKE"));
 
     if(allPosts !== null && allPosts.length > 0) {
         const heroPost = allPosts[0];
