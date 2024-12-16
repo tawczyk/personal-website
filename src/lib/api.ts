@@ -28,11 +28,13 @@ export function getAllPosts(): Post[] {
   return posts;
 }
 
-export function getPostsByCategory(cat: number): Post[] {
+export function getPostsByCatSubCat(cat: string, sub: string = null): Post[] {
     const slugs = getPostSlugs();
     const posts = slugs
         .map((slug) => getPostBySlug(slug))
-        // filter by category
-        .filter((post) => PostCategories.get(post.category) == cat);
+        .filter((post) =>   post.category.toUpperCase() === cat.toUpperCase() && (
+            sub === null || (post.subCategory.toUpperCase() === sub.subCategory.toUpperCase())
+        ))
+        .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
     return posts;
 }
