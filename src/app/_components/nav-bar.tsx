@@ -64,7 +64,7 @@ export function NavBar() {
 
     return (
         <div 
-            className="bg-transparent fixed w-[100vw] z-50 mx-auto flex md:max-w-7xl w-[90%] xl:w-full items-center justify-between py-6"
+            className="bg-transparent z-50 mx-auto flex md:max-w-7xl w-[90%] xl:w-full items-center justify-between py-6"
             onMouseLeave={() => handleHover("all", true)} 
             >
             {/* Navbar Content */}
@@ -87,33 +87,36 @@ export function NavBar() {
             <Link href="/board" className="text-white hover:text-gradient">
                 By Board
             </Link>
-            <Popover>
-                <Popover.Button
-                    onMouseEnter={() => handleHover("FOOT", true)}
-                    >
-                    By Foot
-                </Popover.Button>
-                <Transition
-                    as={Fragment}
-                    appear={footOpen}
-                    show={footOpen}
-                    enter="transition ease-out duration-200"
-                    enterFrom="opacity-0 translate-y-1"
-                    enterTo="opacity-100 translate-y-0"
-                    leave="transition ease-in duration-150"
-                    leaveFrom="opacity-100 translate-y-0"
-                    leaveTo="opacity-0 translate-y-1"
-                    >
-                    <Popover.Panel className="z-10">
-                        {footMenu.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className="relative flex items-center gap-x-6">{item.name}</Link>
-                        ))}
-                    </Popover.Panel>
-                </Transition>
-            </Popover>
+            <Popover.Group className="hidden lg:flex lg:gap-x-12">
+                <Popover className="relative">
+                    <Popover.Button
+                        onMouseEnter={() => handleHover("FOOT", true)}
+                        className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-gradient outline-none"
+                        >
+                        By Foot
+                    </Popover.Button>
+                    <Transition
+                        as={Fragment}
+                        appear={footOpen}
+                        show={footOpen}
+                        enter="transition ease-out duration-200"
+                        enterFrom="opacity-0 translate-y-1"
+                        enterTo="opacity-100 translate-y-0"
+                        leave="transition ease-in duration-150"
+                        leaveFrom="opacity-100 translate-y-0"
+                        leaveTo="opacity-0 translate-y-1"
+                        >
+                        <Popover.Panel className="z-10">
+                            {footMenu.map((item) => (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className="relative flex items-center gap-x-6">{item.name}</Link>
+                            ))}
+                        </Popover.Panel>
+                    </Transition>
+                </Popover>
+            </Popover.Group>
             <Link href="/hand" className="text-white hover:text-gradient">
                 By Hand
             </Link>
