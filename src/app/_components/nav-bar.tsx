@@ -93,7 +93,7 @@ export function NavBar() {
                         onMouseEnter={() => handleHover("FOOT", true)}
                         className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-gradient outline-none"
                         >
-                        By Foot
+                        <Link href="/foot">By Foot</Link>
                     </Popover.Button>
                     <Transition
                         as={Fragment}
