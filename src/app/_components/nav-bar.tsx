@@ -64,7 +64,7 @@ export function NavBar() {
 
     return (
         <div 
-            className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12 z-50"
+            className="bg-transparent fixed w-[100vw] z-50 mx-auto flex md:max-w-7xl w-[90%] xl:w-full items-center justify-between py-6"
             onMouseLeave={() => handleHover("all", true)} 
             >
             {/* Navbar Content */}
