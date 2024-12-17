@@ -27,12 +27,21 @@ import { motion } from "motion/react";
 import Link from 'next/link';
 
 /* Menu Items */
-const FootMenu = [
+const footMenu = [
     {
         name: "Backpacking",
         description: "Backpacking posts",
         href: "foot/backpacking",
-        icon: null,
+    },
+    {
+        name: "Fastpacking",
+        description: "Fastpacking posts",
+        href: "foot/fastpacking",
+    },
+    {
+        name: "Trail Running",
+        description: "Trail running posts",
+        href: "foot/trail_running",
     },
 ];
 
@@ -79,13 +88,18 @@ export function NavBar() {
                 By Board
             </Link>
             <Popover>
-                <Popover.Button>
+                <Popover.Button
+                    onMouseEnter={() => handleHover("FOOT", true)}
+                    >
                     By Foot
                 </Popover.Button>
                 <Popover.Panel>
-                    <Link href="/foot/backpacking">Backpacking</Link>
-                    <Link href="/foot/fastpacking">Fastpacking</Link>
-                    <Link href="/foot/trail_running">Trail Running</Link>
+                    {footMenu.map((item) => (
+                        <Link
+                            key={item.name}
+                            href={item.href}
+                            className="relative flex items-center gap-x-6">{item.name}</Link>
+                    ))}
                 </Popover.Panel>
             </Popover>
             <Link href="/hand" className="text-white hover:text-gradient">
