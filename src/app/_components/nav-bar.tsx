@@ -93,14 +93,26 @@ export function NavBar() {
                     >
                     By Foot
                 </Popover.Button>
-                <Popover.Panel>
-                    {footMenu.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className="relative flex items-center gap-x-6">{item.name}</Link>
-                    ))}
-                </Popover.Panel>
+                <Transition
+                    as={Fragment}
+                    appear={footOpen}
+                    show={footOpen}
+                    enter="transition ease-out duration-200"
+                    enterFrom="opacity-0 translate-y-1"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transition ease-in duration-150"
+                    leaveFrom="opacity-100 translate-y-0"
+                    leaveTo="opacity-0 translate-y-1"
+                    >
+                    <Popover.Panel className="z-10">
+                        {footMenu.map((item) => (
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                className="relative flex items-center gap-x-6">{item.name}</Link>
+                        ))}
+                    </Popover.Panel>
+                </Transition>
             </Popover>
             <Link href="/hand" className="text-white hover:text-gradient">
                 By Hand
