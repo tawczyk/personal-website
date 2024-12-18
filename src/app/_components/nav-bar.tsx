@@ -91,7 +91,7 @@ export function NavBar() {
                 <Popover className="relative">
                     <Popover.Button
                         onMouseEnter={() => handleHover("FOOT", true)}
-                        className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white hover:text-gradient outline-none"
+                        className="flex items-center gap-x-1 leading-6 text-white hover:text-gradient outline-none"
                         >
                         <Link href="/foot">By Foot</Link>
                     </Popover.Button>
