@@ -2,6 +2,7 @@ import { Post } from "@/interfaces/post";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
+import { PostCategories } from "./constants";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -27,11 +28,13 @@ export function getAllPosts(): Post[] {
   return posts;
 }
 
-export function getPostsByCategory(cat: number) {
+export function getPostsByCatSubCat(cat: string, sub: string = null): Post[] {
     const slugs = getPostSlugs();
     const posts = slugs
         .map((slug) => getPostBySlug(slug))
-        // filter by category
-        .filter((post) => post.category == cat);
+        .filter((post) =>   post.category.toUpperCase() === cat.toUpperCase() && (
+            sub === null || (post.subCategory.toUpperCase() === sub.toUpperCase())
+        ))
+        .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
     return posts;
 }

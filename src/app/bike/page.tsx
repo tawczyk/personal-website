@@ -4,8 +4,8 @@ import { Intro } from "@/app/_components/intro";
 import { MoreStories } from "@/app/_components/more-stories";
 import { getPostsByCatSubCat } from "@/lib/api";
 
-export default function Racing() {
-    const allPosts = getPostsByCatSubCat("RACING");
+export default function ByBike() {
+    const allPosts = getPostsByCatSubCat("BIKE");
 
     if(allPosts !== null && allPosts.length > 0) {
         const heroPost = allPosts[0];
