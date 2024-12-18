@@ -53,10 +53,17 @@ export function NavBar() {
             >
             {/* Navbar Content */}
             {/* Desktop Navigation Links */}
-            <Link href="/bike" className="text-white hover:text-gradient">
+            <Link href="/bike"
+                className="text-white hover:text-gradient"
+                onMouseEnter={() => handleHover("BIKE", true)}
+                >
                 By Bike
             </Link>
-            <Link href="/board" className="text-white hover:text-gradient">
+            <Link 
+                href="/board" 
+                className="text-white hover:text-gradient"
+                onMouseEnter={() => handleHover("BOARD", true)}
+                >
                 By Board
             </Link>
             <Popover.Group className="hidden lg:flex lg:gap-x-12">
@@ -89,13 +96,22 @@ export function NavBar() {
                     </Transition>
                 </Popover>
             </Popover.Group>
-            <Link href="/hand" className="text-white hover:text-gradient">
+            <Link href="/hand"
+                className="text-white hover:text-gradient"
+                onMouseEnter={() => handleHover("HAND", true)}
+                >
                 By Hand
             </Link>
-            <Link href="/racing" className="text-white hover:text-gradient">
+            <Link href="/racing" 
+                className="text-white hover:text-gradient"
+                onMouseEnter={() => handleHover("RACING", true)}
+                >
                 Racing
             </Link>
-            <Link href="/training" className="text-white hover:text-gradient">
+            <Link href="/training"
+                className="text-white hover:text-gradient"
+                onMouseEnter={() => handleHover("TRAINING", true)}
+                >
                 Training
             </Link>
         </div>
