@@ -7,22 +7,7 @@
 'use client'
 
 import { Fragment, useState } from "react";
-import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
-import {
- ArrowPathIcon,
- Bars3Icon,
- ChartPieIcon,
- CursorArrowRaysIcon,
- FingerPrintIcon,
- SquaresPlusIcon,
- XMarkIcon,
-} from "@heroicons/react/24/outline";
-import {
- ChevronDownIcon,
- PhoneIcon,
- PlayCircleIcon,
-} from "@heroicons/react/20/solid";
-import { navVariants } from "@/motion";
+import { Popover, Transition } from "@headlessui/react";
 import { motion } from "motion/react";
 import Link from 'next/link';
 
@@ -46,7 +31,6 @@ const footMenu = [
 ];
 
 export function NavBar() {
-    const [mobileMenuOpen, setMobileMenuOpen]   = useState(false);
     const [footOpen, setFootOpen]               = useState(false);
 
     const handleHover = (menuType: string, isOpen: boolean) => {
@@ -68,18 +52,6 @@ export function NavBar() {
             onMouseLeave={() => handleHover("all", true)} 
             >
             {/* Navbar Content */}
-            {/* Mobile Menu Button */}
-            <div className="flex lg:hidden">
-                <button
-                    type="button"
-                    className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                    onClick={() => setMobileMenuOpen(true)}
-                    >
-                    <span className="sr-only">Open main menu</span>
-                    <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-                </button>
-            </div>
-
             {/* Desktop Navigation Links */}
             <Link href="/bike" className="text-white hover:text-gradient">
                 By Bike
@@ -126,13 +98,6 @@ export function NavBar() {
             <Link href="/training" className="text-white hover:text-gradient">
                 Training
             </Link>
-               
-            {/* Mobile Menu */}
-            <Transition.Root show={mobileMenuOpen}>
-                <Dialog as="div" className="fixed inset-0 z-40 lg:hidden" onClose={setMobileMenuOpen}>
-                    {/* Mobile Menu Content */}
-                </Dialog>
-            </Transition.Root>
         </div>
     );
 }
