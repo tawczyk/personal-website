@@ -2,7 +2,6 @@ import { Post } from "@/interfaces/post";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
-import { PostCategories } from "./constants";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
