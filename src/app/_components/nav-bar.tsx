@@ -50,20 +50,20 @@ export function NavBar() {
         <div 
             className="bg-transparent z-50 mx-auto flex md:max-w-7xl w-[90%] xl:w-full items-center justify-between py-6"
             onMouseLeave={() => handleHover("all", true)} 
-            >
+        >
             {/* Navbar Content */}
             {/* Desktop Navigation Links */}
             <Link href="/bike"
                 className="text-white hover:text-gradient"
                 onMouseEnter={() => handleHover("BIKE", true)}
-                >
+            >
                 By Bike
             </Link>
             <Link 
                 href="/board" 
                 className="text-white hover:text-gradient"
                 onMouseEnter={() => handleHover("BOARD", true)}
-                >
+            >
                 By Board
             </Link>
             <Popover.Group className="hidden lg:flex lg:gap-x-12">
@@ -71,8 +71,8 @@ export function NavBar() {
                     <Popover.Button
                         onMouseEnter={() => handleHover("FOOT", true)}
                         className="flex items-center gap-x-1 leading-6 text-white hover:text-gradient outline-none"
-                        >
-                        <Link href="/foot">By Foot</Link>
+                    >
+                       <Link href="/foot">By Foot</Link>
                     </Popover.Button>
                     <Transition
                         as={Fragment}
@@ -84,13 +84,16 @@ export function NavBar() {
                         leave="transition ease-in duration-150"
                         leaveFrom="opacity-100 translate-y-0"
                         leaveTo="opacity-0 translate-y-1"
-                        >
+                    >
                         <Popover.Panel className="absolute top-full z-10 mt-3 overflow-hidden rounded-3xl shadow-lg bg-[#09160E] flex flex-col">
                             {footMenu.map((item) => (
                                 <Link
                                     key={item.name}
                                     href={item.href}
-                                    className="group relative flex items-center gap-x-6 rounded-lg px-4 py-2 text-sm leading-6 hover:bg-gray-800">{item.name}</Link>
+                                    className="group relative flex items-center gap-x-6 rounded-lg px-4 py-2 text-sm leading-6 hover:bg-gray-800"
+                                >
+                                    {item.name}
+                                </Link>
                             ))}
                         </Popover.Panel>
                     </Transition>
@@ -99,19 +102,19 @@ export function NavBar() {
             <Link href="/hand"
                 className="text-white hover:text-gradient"
                 onMouseEnter={() => handleHover("HAND", true)}
-                >
+            >
                 By Hand
             </Link>
             <Link href="/racing" 
                 className="text-white hover:text-gradient"
                 onMouseEnter={() => handleHover("RACING", true)}
-                >
+            >
                 Racing
             </Link>
             <Link href="/training"
                 className="text-white hover:text-gradient"
                 onMouseEnter={() => handleHover("TRAINING", true)}
-                >
+            >
                 Training
             </Link>
         </div>
