@@ -54,14 +54,14 @@ export function NavBar() {
             {/* Navbar Content */}
             {/* Desktop Navigation Links */}
             <Link href="/bike"
-                className="text-white hover:text-gradient"
+                className="hover:text-gradient"
                 onMouseEnter={() => handleHover("BIKE", true)}
             >
                 By Bike
             </Link>
             <Link 
                 href="/board" 
-                className="text-white hover:text-gradient"
+                className="hover:text-gradient"
                 onMouseEnter={() => handleHover("BOARD", true)}
             >
                 By Board
@@ -70,7 +70,7 @@ export function NavBar() {
                 <Popover className="relative">
                     <Popover.Button
                         onMouseEnter={() => handleHover("FOOT", true)}
-                        className="flex items-center gap-x-1 leading-6 text-white hover:text-gradient outline-none"
+                        className="flex items-center gap-x-1 leading-6 hover:text-gradient outline-none"
                     >
                        <Link href="/foot">By Foot</Link>
                     </Popover.Button>
@@ -85,7 +85,7 @@ export function NavBar() {
                         leaveFrom="opacity-100 translate-y-0"
                         leaveTo="opacity-0 translate-y-1"
                     >
-                        <Popover.Panel className="absolute top-full z-10 mt-3 overflow-hidden rounded-3xl shadow-lg bg-[#09160E] flex flex-col">
+                        <Popover.Panel className="absolute top-full z-10 mt-3 overflow-hidden rounded-3xl shadow-lg flex flex-col">
                             {footMenu.map((item) => (
                                 <Link
                                     key={item.name}
@@ -100,19 +100,19 @@ export function NavBar() {
                 </Popover>
             </Popover.Group>
             <Link href="/hand"
-                className="text-white hover:text-gradient"
+                className="hover:text-gradient"
                 onMouseEnter={() => handleHover("HAND", true)}
             >
                 By Hand
             </Link>
             <Link href="/racing" 
-                className="text-white hover:text-gradient"
+                className="hover:text-gradient"
                 onMouseEnter={() => handleHover("RACING", true)}
             >
                 Racing
             </Link>
             <Link href="/training"
-                className="text-white hover:text-gradient"
+                className="hover:text-gradient"
                 onMouseEnter={() => handleHover("TRAINING", true)}
             >
                 Training
